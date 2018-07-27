@@ -17,7 +17,8 @@
 #define EPS (DBL_EPSILON / 2)
 
 const double epsilon = EPS;
-const double splitter = ((DBL_MANT_DIG + 1) >> 1) + 1.0;
+// https://github.com/danshapero/predicates/issues/8
+const double splitter = ( 1 << ((DBL_MANT_DIG + 1) >> 1)) + 1.0;
 
 const double resulterrbound = (3.0 + 8.0 * EPS) * EPS;
 
